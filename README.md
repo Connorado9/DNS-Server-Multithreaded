@@ -13,11 +13,9 @@ To run, simple make the Makefile. The input/names&.txt contains a set of sample 
 The Man-Page for multi-lookup would appear as follows:
 
 NAME
-
 ```multi-lookup - resolve a set of hostnames to IP addresses```
 
 SYNOPSIS
-
 ```multi-lookup <# requester> <# resolver> <requester log> <resolver log> [ <data file> ... ]```
   
 DESCRIPTION
@@ -31,7 +29,6 @@ Resolver threads read the shared data area and find the corresponding IP address
  <data file> filename to be processed. Each file contains a list of host names, one per line, that are to be resolved```
    
 SAMPLE INVOCATION
-   
 ```./multi-lookup 5 5 serviced.txt resolved.txt input/names1*.txt```
    
 SAMPLE CONSOLE OUTPUT
