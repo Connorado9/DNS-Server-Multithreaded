@@ -23,8 +23,7 @@ multi-lookup <# requester> <# resolver> <requester log> <resolver log> [ <data f
 ```
   
 DESCRIPTION
-The file names specified by <data file> are passed to the pool of requester threads which place information into a shared data area.
-Resolver threads read the shared data area and find the corresponding IP address.
+The file names specified by <data file> are passed to the pool of requester threads which place information into a shared data area. Resolver threads read the shared data area and find the corresponding IP address.
   
 ```
  <# requesters> number of requestor threads to place into the thread pool
