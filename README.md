@@ -6,25 +6,27 @@ The application synchronizes access to shared resources (the array, logfiles, st
 Some number of resolver threads, determined by a command line argument, will then resolve hostnames from the shared array, lookup the IP address for that hostname, and write the results to a logfile results.txt. Each requester thread will note how many files they serviced in the command line. Once all the input files have been processed the requester threads will terminate. Each resolver thread notes how many hostnames it resolved. Once all the hostnames have been looked up, the resolver threads will terminate and the program will end. Finally, the total runtime is displayed before the program quits. 
 
 To run, simple make the Makefile. The input/names&.txt contains a set of sample files with websites to exhibit the code's functionality. make clean to cleanup any extraneous .o files or executables. For example,
+```
 ./multi-lookup 5 5 serviced.txt resolved.txt input/names1*.txt
+```
 
 
 
-The Man-Page for multi-lookup would appear as follows:
+##The Man-Page for Multi-Lookup:
 
-NAME
+#NAME
 ```
 multi-lookup - resolve a set of hostnames to IP addresses
 ```
 
-SYNOPSIS
+#SYNOPSIS
 ```
 multi-lookup <# requester> <# resolver> <requester log> <resolver log> [ <data file> ... ]
 ```
   
-DESCRIPTION
+#DESCRIPTION
+
 The file names specified by <data file> are passed to the pool of requester threads which place information into a shared data area. Resolver threads read the shared data area and find the corresponding IP address.
-  
 ```
  <# requesters> number of requestor threads to place into the thread pool
  <# resolvers> number of resolver threads to place into the thread pool
@@ -33,12 +35,12 @@ The file names specified by <data file> are passed to the pool of requester thre
  <data file> filename to be processed. Each file contains a list of host names, one per line, that are to be resolved
 ```
    
-SAMPLE INVOCATION
+#SAMPLE INVOCATION
 ```
 ./multi-lookup 5 5 serviced.txt resolved.txt input/names1*.txt
 ```
    
-SAMPLE CONSOLE OUTPUT
+#SAMPLE CONSOLE OUTPUT
 ```
 thread 0f9c0700 serviced 1 files
 thread 0f1bf700 serviced 1 files
